@@ -21,7 +21,9 @@ jobs:
       - name: Set artifact Name
         id: set-matrix
         run: |
-          echo "::set-output name=build-artifacts::$(echo ${{matrix.fqbn_long//:/_}})"
+          TMP=${{matrix.fqbn_long}}
+          TMP2=${TMP//:/_}
+          echo "::set-output name=build-artifacts::$(echo $TMP2)"
    
       # First of all, we clone the repo using the checkout action.
       - name: Checkout
