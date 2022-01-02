@@ -1,5 +1,5 @@
 
-name: Common nRF52 builder
+name: Common builder
 
 on: [pull_request, push, 'workflow_dispatch']
 
@@ -71,6 +71,6 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.fqbn_long }}-${{ matrix.sketch }}
+          name: ${{ matrix.fqbn_long//:/_ }}-${{ matrix.sketch }}
           path: |
             ${{ matrix.sketch }}/build
