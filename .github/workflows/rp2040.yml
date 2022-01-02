@@ -56,7 +56,7 @@ jobs:
         env:
           BSP_PATH: .arduino15/packages/adafruit/hardware/nrf52
         run: |
-          arduino-cli compile --fqbn ${{ matrix.package }}:${{ matrix.platform }}:${{ matrix.fqbn }}  ./${{ matrix.sketch }}  --output-dir ./${{ matrix.sketch }}/build
+          arduino-cli compile --fqbn ${{ matrix.package }}:${{ matrix.platform }}:${{ matrix.fqbn }}:usbstack=tinyusb ./${{ matrix.sketch }}  --output-dir ./${{ matrix.sketch }}/build
           BSP_VERSION=`eval ls $HOME/$BSP_PATH`
           BUILDLOC=`eval ls ./${{ matrix.sketch }}/build`
       - name: Archive artifacts

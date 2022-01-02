@@ -2,3 +2,5 @@
 *.elf
 *.bin
 *.uf2
+arduino-cli/*
+.DS_Store
