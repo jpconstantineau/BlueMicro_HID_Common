@@ -1,7 +1,7 @@
 
-name: Common builder
+name: Build - hid_composite_example
 
-on: [pull_request, push, 'workflow_dispatch']
+on: ['workflow_dispatch']
 
 jobs:
   build:
