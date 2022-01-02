@@ -51,7 +51,7 @@ jobs:
           arduino-cli lib list
 
       - name: Compile Sketch - nRF52
-        if:  ${{ contains( matrix.fqbn_long , "nrf52" ) }}
+        if:  ${{ contains( matrix.fqbn_long , 'nrf52' ) }}
         env:
           BSP_PATH: .arduino15/packages/adafruit/hardware/nrf52
         run: |
@@ -62,10 +62,10 @@ jobs:
           ls -lR ./${{ matrix.sketch }}/build/
 
       - name: Compile Sketch - RP2040
-        if:  ${{ contains( matrix.fqbn_long , "rp2040" ) }}
+        if:  ${{ contains( matrix.fqbn_long , 'rp2040' ) }}
         run: |
           arduino-cli compile --fqbn ${{ matrix.fqbn_long }}:usbstack=tinyusb ./${{ matrix.sketch }}  --output-dir ./${{ matrix.sketch }}/build
-          
+
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
