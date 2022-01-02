@@ -9,7 +9,9 @@ jobs:
       fail-fast: false
       matrix:
         sketch: ['hid_composite_example']
-        fqbn_long: ['community_nrf52:nrf52:nrf52:pca10056']
+        fqbn_long: ['community_nrf52:nrf52:pca10056',
+                    'adafruit:nrf52:pca10056',
+                    'rp2040:rp2040:rpipico']
 
     runs-on: ubuntu-latest
     
