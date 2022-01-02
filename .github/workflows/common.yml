@@ -14,8 +14,16 @@ jobs:
                     'rp2040:rp2040:rpipico']
 
     runs-on: ubuntu-latest
+    outputs:
+      build-artifacts: ${{ steps.set-matrix.outputs.build-artifacts }}
     
-    steps:    
+    steps:
+      - name: Set artifact Name
+        id: set-matrix
+          shell: bash   
+          run: |
+            echo "::set-output name=build-artifacts::$(echo ${matrix.fqbn_long//:/_})"
+   
       # First of all, we clone the repo using the checkout action.
       - name: Checkout
         uses: actions/checkout@master
@@ -71,6 +79,6 @@ jobs:
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.fqbn_long//:/_ }}-${{ matrix.sketch }}
+          name: ${{ steps.set-matrix.outputs.build-artifacts }}-${{ matrix.sketch }}
           path: |
             ${{ matrix.sketch }}/build
