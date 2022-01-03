@@ -3,3 +3,4 @@ board_manager:
     - https://www.adafruit.com/package_adafruit_index.json
     - https://github.com/jpconstantineau/Community_nRF52_Arduino/releases/latest/download/package_jpconstantineau_boards_index.json
     - https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
+    - https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json
