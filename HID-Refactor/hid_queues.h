@@ -10,7 +10,7 @@
 #include <cstdint>
 #include <vector>
 #include <string.h>
-#include <arduino.h>
+#include "arduino.h"
 #include "hid_data_structures.h"
 #include "hid_utils.h"
 
