@@ -58,7 +58,6 @@ jobs:
           arduino-cli core install community_nrf52:nrf52 --additional-urls $BSP_URL
           arduino-cli core update-index --additional-urls $BSP_URL_RP2040
           arduino-cli core install rp2040:rp2040 --additional-urls $BSP_URL_RP2040
-          arduino-cli core update-index --additional-urls $BSP_URL_STM32
           arduino-cli core list
           arduino-cli board listall
           # Install library dependencies
