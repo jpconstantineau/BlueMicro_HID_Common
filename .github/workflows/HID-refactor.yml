@@ -12,8 +12,8 @@ jobs:
         fqbn_long: ['community_nrf52:nrf52:pca10056',
                     'adafruit:nrf52:feather52832',
                     'adafruit:nrf52:feather52840',
-                    'adafruit:samd:feather_m0',
-                    'adafruit:samd:feather_m4',
+                    'adafruit:samd:adafruit_feather_m0',
+                    'adafruit:samd:adafruit_feather_m4',
                     'rp2040:rp2040:rpipico']
 
     runs-on: ubuntu-latest
@@ -62,7 +62,7 @@ jobs:
           arduino-cli core list
           arduino-cli board listall
           # Install library dependencies
-          arduino-cli lib install   "Adafruit GFX Library"  "Adafruit NeoPixel"  "Adafruit SSD1306" 
+          arduino-cli lib install   "Adafruit GFX Library"  "Adafruit NeoPixel"  "Adafruit SSD1306" "Adafruit TinyUSB Library"
           arduino-cli lib list
 
       - name: Compile Sketch - nRF52

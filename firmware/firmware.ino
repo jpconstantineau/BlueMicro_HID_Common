@@ -2,14 +2,8 @@
 //
 // SPDX-License-Identifier: BSD-3-Clause
 
-
-#ifdef NRF52 // includes both NRF52832_XXAA and NRF52840_XXAA 
-
-#endif
-
-#if CFG_TUSB_MCU == OPT_MCU_RP2040
-
-
+#ifdef USE_TINYUSB 
+#include "Adafruit_TinyUSB.h"
 #endif
 
 void setup() {
