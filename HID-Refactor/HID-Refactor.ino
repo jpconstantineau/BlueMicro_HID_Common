@@ -4,6 +4,15 @@
 
 #include "hid.h"
 
+// This was tested with the following hardware:
+// Adafruit nRF52832 Feather - BLE Only
+// Adafruit nRF52840 Festher Express - BLE + USB
+// Adafruit Feather RP2040 - USB Only
+// Adafruit Feather M0 Express - USB Only
+// Adafruit Feather M4 Express - USB Only 
+// The GPIO/Pin differs betwen the feathers.
+// No other changes are needed between Feathers.
+
 const int pin = 7; // UserSw
 bool activeState = false;
 
@@ -11,10 +20,7 @@ bool activeState = false;
 // the setup function runs once when you press reset or power the board
 void setup()
 {
-  // Notes: following commented-out functions has no affect on ESP32
-  // usb_hid.setPollInterval(2);
-  // usb_hid.setReportDescriptor();
-  // usb_hid.setStringDescriptor("TinyUSB HID Composite");
+
 
   hid.begin(); 
   

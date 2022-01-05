@@ -16,6 +16,7 @@
 
 #ifndef HARDWARE_DETECT_BLE_AVAILABLE
   // Conversion table from Ascii to keycode (shift, keycode)
+  // READ THIS: If you have a compile error here did you select TinyUSB for USB stack?
   const uint8_t hid_ascii_to_keycode[128][2] = { HID_ASCII_TO_KEYCODE };
   
   // Conversion table from Keycode to Ascii (ascii without shift, ascii with shift)

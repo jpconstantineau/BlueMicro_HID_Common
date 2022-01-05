@@ -7,6 +7,9 @@
   Adafruit_USBD_HID usb_hid(desc_hid_report, sizeof(desc_hid_report), HID_ITF_PROTOCOL_NONE, 2, false);
   void setupUSB(void)
   {
+    usb_hid.setPollInterval(2);
+    usb_hid.setReportDescriptor();
+    usb_hid.setStringDescriptor("TinyUSB HID Composite");
     usb_hid.begin();
   }
 #endif
